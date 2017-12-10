@@ -1,0 +1,22 @@
+{
+  "intents": [
+    {
+      "intent": "PiOn"
+    },
+    {
+      "intent": "PiOff"
+    },
+    {
+      "intent": "PiReboot"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
