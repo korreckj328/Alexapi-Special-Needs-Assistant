@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 import boto3
 import os
 import time
 
-access_key = "YOUR_ACCESS_KEY"
-access_secret = "YOUR_ACCCESS_SECRET"
+access_key ="YOUR_ACCESS_KEY"
+access_secret ="YOUR_ACCCESS_SECRET"
 region ="YOUR_REGION"
-queue_url = "YOUR_QUEUE_URL"
+queue_url ="YOUR_QUEUE_URL"
 
 def pop_message(client, url):
     response = client.receive_message(QueueUrl = url, MaxNumberOfMessages = 10)
@@ -24,10 +25,20 @@ for i in range(0,10):
         print(message)
 
         if message == "off":
-            os.system('/home/pi/shutdown.sh')
+            os.system('aplay /home/pi/shutdown.wav')
+            os.system('sudo shutdown -h now')
 
 	elif message == "reboot":
-	    os.system('/home/pi/reboot.sh') 
+	    os.system('aplay /home/pi/restarting.wav')
+            os.system('sudo reboot')
+
+        elif message == "vacation":
+            os.system('aplay /home/pi/vacation.wav')
+            os.system('crontab /home/pi/vacationcron.bak')
+
+        elif message == "school":
+            os.system('aplay /home/pi/school.wav')
+            os.system('crontab /home/pi/schooldayscron.bak')
     except:
         pass
     time.sleep(5)
