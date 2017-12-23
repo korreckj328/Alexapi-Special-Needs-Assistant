@@ -4,6 +4,12 @@
       "intent": "PiOn"
     },
     {
+      "intent": "vacation"
+    },
+    {
+      "intent": "school"
+    },
+    {
       "intent": "PiOff"
     },
     {
