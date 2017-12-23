@@ -25,20 +25,20 @@ for i in range(0,10):
         print(message)
 
         if message == "off":
-            os.system('aplay /home/pi/shutdown.wav')
+            os.system('aplay /home/pi/Alexapi-Special-Needs-Assistant/shutdown.wav')
             os.system('sudo shutdown -h now')
 
 	elif message == "reboot":
-	    os.system('aplay /home/pi/restarting.wav')
+	    os.system('aplay /home/pi/Alexapi-Special-Needs-Assistant/restarting.wav')
             os.system('sudo reboot')
 
         elif message == "vacation":
-            os.system('aplay /home/pi/vacation.wav')
-            os.system('crontab /home/pi/vacationcron.bak')
+            os.system('aplay /home/pi/Alexapi-Special-Needs-Assistant/vacation.wav')
+            os.system('crontab /home/pi/Alexapi-Special-Needs-Assistant/vacationcron.bak')
 
         elif message == "school":
-            os.system('aplay /home/pi/school.wav')
-            os.system('crontab /home/pi/schooldayscron.bak')
+            os.system('aplay /home/pi/Alexapi-Special-Needs-Assistant/school.wav')
+            os.system('crontab /home/pi/Alexapi-Special-Needs-Assistant/schooldayscron.bak')
     except:
         pass
     time.sleep(5)
