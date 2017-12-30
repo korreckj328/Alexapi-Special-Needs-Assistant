@@ -56,5 +56,5 @@ def lambda_handler(event, context):
     else:
         message = "Unknown"
         
-    speechlet = build_speechlet_response("Mirror Status", message, "", "true")
+    speechlet = build_speechlet_response("Pi Assistant", message, "", "true")
     return build_response({}, speechlet)
