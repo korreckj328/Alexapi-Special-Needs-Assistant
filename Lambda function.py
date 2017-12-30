@@ -38,10 +38,7 @@ def post_message(client, message_body, url):
 def lambda_handler(event, context):
     client = boto3.client('sqs', aws_access_key_id = access_key, aws_secret_access_key = access_secret, region_name = region)
     intent_name = event['request']['intent']['name']
-    if intent_name == "PiOn":
-        post_message(client, 'on', queue_url)
-        message = "On"
-    elif intent_name == "PiOff":
+    if intent_name == "PiOff":
         post_message(client, 'off', queue_url)
         message = "off"
     elif intent_name == "PiReboot":
